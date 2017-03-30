@@ -5,6 +5,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $page = (isset($_GET['page']) ? $_GET['page'] : "index");
 $file = $page . ".php";
 
+
+
 ?>
 <!doctype html>
 <html lang="fr">

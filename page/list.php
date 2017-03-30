@@ -23,8 +23,6 @@
     // Closing
     curl_close($ch);
 
-    // Will dump a beauty json :3
-
 $url = file_get_contents($url);
 
 $json = json_decode($url, true);
@@ -39,9 +37,6 @@ $json = json_decode($url, true);
 echo '<pre>'.print_r($url,true).'</pre>';
 
 ?>
-
-
-
 
 <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">

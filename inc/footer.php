@@ -1,5 +1,11 @@
 <div class="row footerMarge">
-    <div class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h3>Footer</h3>
+    <div class="footer col-xs-4 text-center">
+        <p>Hackaton #1</p>
+    </div>
+    <div class="footer col-xs-4 text-center">
+        <p>Wild Code School</p>
+    </div>
+    <div class="footer col-xs-4 text-center">
+        <p>François, Florence, Alexis</p>
     </div>
 </div>

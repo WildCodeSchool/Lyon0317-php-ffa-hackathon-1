@@ -4,14 +4,14 @@ class movieManager
 {
     const TABLE = "hackatonffa";
     /**
-     * @var hackatonffa
+     * @var $bdd
      */
     private $bdd;
     /**
      * @var string
      */
     private $motrecherche;
-        /**
+    /**
      * @var string
      */
 
@@ -26,7 +26,7 @@ class movieManager
                 VALUES ('$this->motRecherche');";
         $this->bdd->execSql($sql);
     }
-    public function listMovie():\mysqli_result
+    public function listMovie()
     {
         $sql = "SELECT * FROM " . self::TABLE;
         return $this->bdd->execSql($sql);

@@ -3,7 +3,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['Title'];
     $year = $_POST['Year'];
-    $type = $_POST['Genre'];
+    $type = $_POST['Type'];
 }
 
 ?>
@@ -16,20 +16,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <legend>Look for a movie</legend>
 
             <div class="form-group">
-                <label for="keyword"></label>
+                <label for="Title"></label>
                 <input type="text" class="form-control" name="Title" id="Title" placeholder="What do you want to see ?" value="">
             </div>
 
             <div class="form-group">
-                <label for="type"></label>
-                <input type="text" class="form-control" name="Genre" id="Genre" placeholder="Movie, Show, Episode" value="">
+                <label for="Type"></label>
+                <input type="text" class="form-control" name="Type" id="Type" placeholder="A movie ? A tv show ? something else ?" value="">
             </div>
 
             <div class="form-group">
-                <label for="year"></label>
-                <input type="text" class="form-control" name="Year" id="Year" placeholder="Year" value="">
+                <label for="Year"></label>
+                <input type="text" class="form-control" name="Year" id="Year" placeholder="What year ?" value="">
             </div>
-            <a href="/?page=list"><button type="submit" class="btn btn-primary">Give me a movie</button></a>
+            <button type="submit" class="btn btn-primary">Give me a movie</button>
         </form>
     </div>
 </div>

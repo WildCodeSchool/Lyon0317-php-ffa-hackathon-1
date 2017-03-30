@@ -1,5 +1,7 @@
 <?php
-$url = "http://www.omdbapi.com/?s=batman";
+require "index.php";
+
+$url = "http://www.omdbapi.com/?s="  ;
 
     //  Initiate curl
     $ch = curl_init();

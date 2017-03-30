@@ -1,5 +1,14 @@
 <?php
-$url = "http://www.omdbapi.com/?s=batman";
+
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+        $title = (isset($_GET['title']) ? "s=" . $_GET['title'] : "");
+        $year = (isset($_GET['year']) ? "&y=" . $_GET['year'] : "");
+        $type = (isset($_GET['type']) ? "&type=" . $_GET['type'] : "");
+        $url = "http://www.omdbapi.com/?$title.$year.$type";
+
+    }
+
 
     //  Initiate curl
     $ch = curl_init();
@@ -15,9 +24,16 @@ $url = "http://www.omdbapi.com/?s=batman";
     curl_close($ch);
 
     // Will dump a beauty json :3
-    $json = json_decode($url, true);
 
-    $url = file_get_contents($url);
+$url = file_get_contents($url);
+
+$json = json_decode($url, true);
+
+
+
+
+$json = json_decode($url, true);
+
 
 
 echo '<pre>'.print_r($url,true).'</pre>';
@@ -37,15 +53,17 @@ echo '<pre>'.print_r($url,true).'</pre>';
                     <tr>
                         <th>Movie title</th>
                         <th>Year</th>
+                        <th>imdbID</th>
                         <th>Type</th>
                         <th>Poster</th>
                     </tr>
-                    <?php foreach($result as $record): ?>
+                    <?php foreach($json['Search'] as $record => $s): ?>
                         <tr>
-                            <td><?php echo $record->Title;?></td>
-                            <td><?php echo $record->Year;?></td>
-                            <td><?php echo $record->Genre;?></td>
-                            <td><?php echo $record->Poster;?></td>
+                            <td><?php echo $s['Title']?></td>
+                            <td><?php echo $s['Year'];?></td>
+                            <td><?php echo $s['imdbID'];?></td>
+                            <td><?php echo $s['Type'];?></td>
+                            <td><img src="<?php echo $s['Poster'];?>"></td>
                         </tr>
                     <?php endforeach; ?>
                 </table>
@@ -53,4 +71,5 @@ echo '<pre>'.print_r($url,true).'</pre>';
         </div>
     </div>
 </div>
+
 

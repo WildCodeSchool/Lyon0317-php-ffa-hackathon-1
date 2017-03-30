@@ -5,9 +5,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $page = (isset($_GET['page']) ? $_GET['page'] : "index");
 $file = $page . ".php";
 
-$url = "http://www.omdbapi.com/?t=";
-
-
 ?>
 <!doctype html>
 <html lang="fr">
@@ -22,7 +19,16 @@ $url = "http://www.omdbapi.com/?t=";
           crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <title>
-
+        <?php
+        switch ($page){
+            case 'index' :
+                echo 'movie search';
+                break;
+            case 'list' :
+                echo 'movie search';
+                break;
+        }
+        ?>
     </title>
 </head>
 <body>

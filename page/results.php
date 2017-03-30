@@ -1,25 +1,3 @@
-<?php
-$url = "http://www.omdbapi.com/?t=batman";
-
-    //  Initiate curl
-    $ch = curl_init();
-    // Disable SSL verification
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    // Will return the response, if false it print the response
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    // Set the url
-    curl_setopt($ch, CURLOPT_URL,$url);
-    // Execute
-    curl_exec($ch);
-    // Closing
-    curl_close($ch);
-
-    // Will dump a beauty json :3
-    $result = json_decode($url, true);
-
-    $url = file_get_contents($url);
-
-
 echo '<pre>'.print_r($url,true).'</pre>';
 
 ?>
@@ -39,10 +17,10 @@ echo '<pre>'.print_r($url,true).'</pre>';
                     </tr>
                     <?php foreach($result as $record): ?>
                         <tr>
-                            <td><?php echo $record->Title;?></td>
-                            <td><?php echo $record->Year;?></td>
-                            <td><?php echo $record->Genre;?></td>
-                            <td><?php echo $record["Poster"];?></td>
+                            <td><?php echo $record['Title'];?></td>
+                            <td><?php echo $record['Year'];?></td>
+                            <td><?php echo $record['Genre'];?></td>
+                            <td><?php echo $record['Poster'];?></td>
                         </tr>
                     <?php endforeach; ?>
                 </table>

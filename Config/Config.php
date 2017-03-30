@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Alex
- * Date: 30/03/2017
- * Time: 10:41
- */
+
+namespace wcs;
+
+class Config
+{
+    const USER = "root";
+    const PASSWORD = "895fa1sr";
+    const HOST = "localhost";
+    const DBNAME = "hackatonffa";
+
+}

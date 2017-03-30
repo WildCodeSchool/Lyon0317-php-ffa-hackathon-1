@@ -5,7 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $page = (isset($_GET['page']) ? $_GET['page'] : "index");
 $file = $page . ".php";
 
-$url = "http://www.omdbapi.com/?t=requiem";
+$url = "http://www.omdbapi.com/?t=georges";
 
 
 //  Initiate curl

@@ -14,14 +14,9 @@ $url = "http://www.omdbapi.com/?s=batman";
     // Closing
     curl_close($ch);
 
-    // Will dump a beauty json :3
 $url = file_get_contents($url);
 
 $json = json_decode($url, true);
-
-
-
-echo '<pre>'.print_r($url,true).'</pre>';
 
 ?>
 
@@ -34,6 +29,7 @@ echo '<pre>'.print_r($url,true).'</pre>';
                 <table class="table">
                     <tr>
                         <th>Movie title</th>
+                        <th>ImdbID</th>
                         <th>Year</th>
                         <th>Type</th>
                         <th>Poster</th>
@@ -41,6 +37,7 @@ echo '<pre>'.print_r($url,true).'</pre>';
                     <?php foreach($json['Search'] as $record => $s): ?>
                         <tr>
                             <td><?php echo $s['Title']?></td>
+                            <td><?php echo $s['imdbID']?></td>
                             <td><?php echo $s['Year'];?></td>
                             <td><?php echo $s['Type'];?></td>
                             <td><img src="<?php echo $s['Poster'];?>"></td>

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="year"></label>
                 <input type="text" class="form-control" name="Year" id="Year" placeholder="Year" value="">
             </div>
-            <button type="submit" class="btn btn-primary">Give me a movie</button>
+            <a href="/?page=list"><button type="submit" class="btn btn-primary">Give me a movie</button></a>
         </form>
     </div>
 </div>

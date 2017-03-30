@@ -21,6 +21,16 @@ $file = $page . ".php";
           crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <title>
+        <?php
+        switch ($page) {
+            case 'index':
+                echo 'Movie Search';
+                break;
+            case 'list':
+                echo 'Movie Search';
+                break;
+        }
+        ?>
 
     </title>
 </head>

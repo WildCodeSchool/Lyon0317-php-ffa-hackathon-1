@@ -1,5 +1,5 @@
 <?php
-$url = "http://www.omdbapi.com/?t=batman";
+$url = "http://www.omdbapi.com/?s=batman";
 
     //  Initiate curl
     $ch = curl_init();
@@ -15,9 +15,10 @@ $url = "http://www.omdbapi.com/?t=batman";
     curl_close($ch);
 
     // Will dump a beauty json :3
-    $result = json_decode($url, true);
+$url = file_get_contents($url);
 
-    $url = file_get_contents($url);
+$json = json_decode($url, true);
+
 
 
 echo '<pre>'.print_r($url,true).'</pre>';
@@ -37,12 +38,12 @@ echo '<pre>'.print_r($url,true).'</pre>';
                         <th>Type</th>
                         <th>Poster</th>
                     </tr>
-                    <?php foreach($result as $record): ?>
+                    <?php foreach($json['Search'] as $record => $s): ?>
                         <tr>
-                            <td><?php echo $record->Title;?></td>
-                            <td><?php echo $record->Year;?></td>
-                            <td><?php echo $record->Genre;?></td>
-                            <td><?php echo $record["Poster"];?></td>
+                            <td><?php echo $s['Title']?></td>
+                            <td><?php echo $s['Year'];?></td>
+                            <td><?php echo $s['Type'];?></td>
+                            <td><img src="<?php echo $s['Poster'];?>"></td>
                         </tr>
                     <?php endforeach; ?>
                 </table>

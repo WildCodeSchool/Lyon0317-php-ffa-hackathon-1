@@ -1,0 +1,17 @@
+{
+    "name": "omdb/ffa",
+    "description": "movie search",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alexis Pitchen",
+            "email": "apitchen@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {"wcs\\":["src/", "config/"]}
+    }
+}

@@ -7,7 +7,7 @@
 
             <div class="form-group">
                 <label for="keyword"></label>
-                <input type="text" class="form-control" name="keyword" id="keyword" placeholder="" value="">
+                <input type="text" class="form-control" name="keyword" id="keyword" placeholder="What do you want to see ?" value="">
             </div>
 
             <div class="form-group">

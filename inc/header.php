@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Alex
- * Date: 30/03/2017
- * Time: 10:41
- */
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <a class="navbar-brand" href="/">Movie Search</a>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/?page=list">Liste</a></li>
+        </ul>
+    </nav>
+</div>

@@ -5,7 +5,7 @@ namespace hack;
 class Config
 {
     const USER      = "root";
-    const PASSWORD  = "root";
-    const HOST      = "localhost:8889";
+    const PASSWORD  = "Letellier14760";
+    const HOST      = "localhost";
     const DBNAME    = "hackatonffa";
 }

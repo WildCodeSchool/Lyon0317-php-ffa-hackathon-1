@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-require "../config/Config.php";
+require "../Config/Config.php";
 require "../src/BddManager.php";
 require "../src/MovieManager.php";
 require "../src/TitleManager.php";

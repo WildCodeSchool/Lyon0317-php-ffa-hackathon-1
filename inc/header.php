@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row movie">
     <nav class="navbar navbar-default" role="navigation">
         <a class="navbar-brand" href="/">Movie Search</a>
         <ul class="nav navbar-nav">

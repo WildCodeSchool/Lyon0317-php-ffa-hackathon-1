@@ -33,6 +33,7 @@ class TitleManager
         return $this->title;
     }
 
+
     /**
      * @param MovieManager $title
      */
@@ -42,6 +43,7 @@ class TitleManager
     }
 
     public function addTitle()
+
     {
         $sql = "INSERT INTO " . self::TABLE . " (Title)
         VALUES ('$this->title');";

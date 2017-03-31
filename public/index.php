@@ -27,6 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $movieManager->setType($_POST['Type']);
 
     $movieManager->setYear($_POST['Year']);
+
     $json = $movieManager->workCurl();
 
     $titleManager->setTitle($_POST['Title']);

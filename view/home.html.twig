@@ -1,17 +1,16 @@
 <div class="row">
-    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+    <div class="col-xs-8 col-xs-offset-2">
         <form action="" method="post" role="form">
             <input type="hidden" name="" value="">
             <legend>Look for a movie</legend>
 
-            <div class="form-group">
+            <div class="form-group col-xs-12 col-sm-4">
                 <label for="Title"></label>
                 <input type="text" class="form-control" name="Title" id="Title" placeholder="What do you want to see ?" required="required" value="">
             </div>
 
-            <div class="form-group">
-                <label for="Type"> Select your type</label>
+            <div class="form-group col-xs-12 col-sm-4">
+                <label for="Type"></label>
                 <select id="Type" class="form-control" name="Type">
                     <option value="movie">Movie</option>
                     <option value="series">Serie</option>
@@ -19,39 +18,38 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div class="form-group col-xs-12 col-sm-4">
                 <label for="Year"></label>
                 <input type="text" class="form-control" name="Year" id="Year" placeholder="What year ?" value="">
             </div>
-            <button type="submit" class="btn btn-primary">Give me a movie</button>
+            <div class="col-xs-4 col-xs-offset-4 text-center">
+                <button type="submit" class="btn btn-primary">Give me a movie</button>
+            </div>
         </form>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">Liste des contacts</div>
-            <form action="" method="post" id="formList" name="formList">
-                <input type="hidden" name="id" id="id" value="">
-                <table class="table">
-                    <tr>
-                        <th class="text-center">ImdbID</th>
-                        <th class="text-center">Movie title</th>
-                        <th class="text-center">Year</th>
-                        <th class="text-center">Type</th>
-                        <th class="text-center">Poster</th>
-                    </tr>
-                    {% for record in json %}
-                    <tr>
-                        <td class="text-center">{{ record.imdbID }}</td>
-                        <td class="text-center">{{ record.Title }}</td>
-                        <td class="text-center">{{ record.Year }}</td>
-                        <td class="text-center">{{ record.Type }}</td>
-                        <td class="text-center"><img src="{{ record.Poster }}"></td>
-                    </tr>{% endfor %}
-                </table>
-            </form>
-        </div>
+<div class="container outerpadding">
+    <div class="row">
+        <form action="" method="POST" id="formList" name="formList">
+            {% for record in json %}
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-md-4 col-lg-3">
+                <div class="panel">
+                    <div class="panel-heading text-center"><strong>{{ record.Title }}</strong></div>
+                    <div class="panel-body">
+
+                        <div class="boximg">
+                            <img src="{{ record.Poster }}" class="img-responsive" alt="affiche du film">
+                            <span class="label label-danger date">{{ record.Year }}</span>
+                        </div>
+                        <br>
+                        <p class="pull-left">imdbID : {{ record.imdbID }}</p><br>
+                        <p class="pull-right">{{ record.Type }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </form>
     </div>
 </div>

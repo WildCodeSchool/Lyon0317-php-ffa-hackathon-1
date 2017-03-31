@@ -33,7 +33,6 @@ class TitleManager
         return $this->title;
     }
 
-
     /**
      * @param MovieManager $title
      */

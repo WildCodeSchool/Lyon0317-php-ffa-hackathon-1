@@ -1,12 +1,11 @@
 <?php
 
-namespace wcs;
+namespace hack;
 
 class Config
 {
-    const USER = "root";
-    const PASSWORD = "895fa1sr";
-    const HOST = "localhost";
-    const DBNAME = "hackatonffa";
-
+    const USER      = "root";
+    const PASSWORD  = "root";
+    const HOST      = "localhost:8889";
+    const DBNAME    = "hackatonffa";
 }

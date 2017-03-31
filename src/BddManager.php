@@ -1,11 +1,14 @@
 <?php
+
 namespace hack;
+
 class BddManager
 {
     /**
      * @var \mysqli
      */
     private $connection;
+
     public function __construct()
     {
         $mysqli = new \mysqli(Config::HOST, Config::USER, Config::PASSWORD, Config::DBNAME);

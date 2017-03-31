@@ -14,12 +14,12 @@ class MovieManager
     private $bdd;
 
     /**
-     * @param string $field
-     * @return string
+     * TitleManager constructor.
+     * @param BddManager $bdd
      */
-    private function escapeField($field)
+    public function __construct($bdd)
     {
-        return mysqli_real_escape_string($this->bdd->getConnection(), $field);
+        $this->bdd = $bdd;
     }
 
     /**
@@ -35,7 +35,7 @@ class MovieManager
      */
     public function setTitle($title)
     {
-        $this->title = $title;
+        $this->title = $this->escapeField($title);
     }
 
     /**
@@ -68,6 +68,15 @@ class MovieManager
     public function setType($type)
     {
         $this->type = $type;
+    }
+
+    /**
+     * @param string $field
+     * @return string
+     */
+    private function escapeField($field)
+    {
+        return mysqli_real_escape_string($this->bdd->getConnection(), $field);
     }
 
     public function workCurl()

@@ -25,20 +25,26 @@ class TitleManager
         $this->bdd = $bdd;
     }
 
+    /**
+     * @return MovieManager
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param MovieManager $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
     public function addTitle()
     {
         $sql = "INSERT INTO " . self::TABLE . " (Title)
         VALUES ('$this->title');";
         $this->bdd->execSql($sql);
-    }
-
-    public function getTitle()
-    {
-        $sql =
-    }
-
-    private function escapeField($field)
-    {
-        return mysqli_real_escape_string($this->bdd->getConnection(), $field);
     }
 }

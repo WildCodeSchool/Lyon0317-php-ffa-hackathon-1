@@ -32,11 +32,6 @@ class TitleManager
         $this->bdd->execSql($sql);
     }
 
-    public function getTitle()
-    {
-        $sql =
-    }
-
     private function escapeField($field)
     {
         return mysqli_real_escape_string($this->bdd->getConnection(), $field);
